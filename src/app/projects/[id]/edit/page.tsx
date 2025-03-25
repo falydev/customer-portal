@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { getProjectById } from "@/lib/project-service";
 import { Project } from "@/lib/types";
 import { ProjectForm } from "@/components/projects/project-form";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import {getProjectById} from "@/lib/server-data-service";
 
 export default function EditProjectPage({
   params

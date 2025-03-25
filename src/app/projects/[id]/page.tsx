@@ -1,5 +1,5 @@
-import { getProjects, getProjectById } from "@/lib/project-service";
 import ProjectDetailClient from "@/components/projects/project-detail-client";
+import {getProjectById, getProjects} from "@/lib/server-data-service";
 
 // Generate static params for all projects
 export async function generateStaticParams() {

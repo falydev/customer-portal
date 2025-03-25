@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
-  output: 'export',
+  // output: 'export',
   distDir: 'out',
   images: {
     unoptimized: true,
@@ -34,6 +34,16 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      // Optional: Set up rewrites for local development
+      {
+        source: '/api/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
+      },
+    ];
+  },
+
 };
 
 export default nextConfig;

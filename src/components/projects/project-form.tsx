@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Project, ProjectFormData, PROJECT_STATUS_OPTIONS } from "@/lib/types";
-import { createProject, updateProject } from "@/lib/project-service";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

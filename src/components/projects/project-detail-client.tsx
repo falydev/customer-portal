@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { getProjectById, deleteProject } from "@/lib/project-service";
 import { getTicketsByProjectId, deleteTicket } from "@/lib/ticket-service";
 import { Project, Ticket } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -43,6 +42,7 @@ import {
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import TicketForm from "@/components/projects/ticket-form";
+import {getProjectById} from "@/lib/server-data-service";
 
 interface ProjectDetailClientProps {
   projectId: string;
@@ -63,7 +63,7 @@ export default function ProjectDetailClient({
   useEffect(() => {
     const loadProjectData = async () => {
       if (!project) {
-        const foundProject = getProjectById(projectId);
+        const foundProject = await getProjectById(projectId);
         if (foundProject) {
           setProject(foundProject);
         }
